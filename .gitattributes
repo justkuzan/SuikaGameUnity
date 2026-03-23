@@ -1,2 +1,8 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Явно указываем, что скрипты и мета-файлы должны быть с LF
+*.cs text eol=lf
+*.unity text eol=lf
+*.asset text eol=lf
+*.meta text eol=lf
