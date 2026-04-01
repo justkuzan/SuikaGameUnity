@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8555781e1baf7684dbf86b6a26e842ac, type: 3}
+  m_Name: Flower_03
+  m_EditorClassIdentifier: Assembly-CSharp::FlowerData
+  flowerName: 
+  flowerLevel: 3
+  flowerSprite: {fileID: 1926599758980605586, guid: 366247d20d2a68946afe346dd5b8a858, type: 3}
+  flowerPoints: 0
+  flowerPrice: 0

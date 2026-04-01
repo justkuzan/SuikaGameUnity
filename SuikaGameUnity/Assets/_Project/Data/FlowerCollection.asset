@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82874d72ab9e480438f1ea08d7dc3b8f, type: 3}
+  m_Name: FlowerCollection
+  m_EditorClassIdentifier: Assembly-CSharp::FlowerCollection
+  flowers:
+  - {fileID: 11400000, guid: b3acc8d50f6f96c4ab4ba04d874a8a02, type: 2}
+  - {fileID: 11400000, guid: 4d514b086ac9d914e87ffe8f90cc8d1a, type: 2}
+  - {fileID: 11400000, guid: 8dbe1ff9685bb2842b7f82e7a3e73205, type: 2}
+  - {fileID: 11400000, guid: 03843c6ba1222e4439741108b512b502, type: 2}
+  - {fileID: 11400000, guid: 79537ab546e65f24a9815405b04007d5, type: 2}
