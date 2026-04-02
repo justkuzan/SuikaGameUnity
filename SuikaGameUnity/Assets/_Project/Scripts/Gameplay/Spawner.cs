@@ -1,24 +1,32 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Spawner : MonoBehaviour
 {
+    [SerializeField] private Camera mainCamera;
     public FlowerCollection flowerCollection;
-
-    private Vector3 mousePosition;
+    public GameObject flowerPrefab;
     
-    void Update()
-    { 
-        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+    private Vector3 mousePosition;
 
+    private void Update()
+    {
+        Vector2 screenPos = Mouse.current.position.ReadValue();
+        Vector3 mouseWorldPosition = new Vector3(screenPos.x, screenPos.y, Mathf.Abs(mainCamera.transform.position.z));
+        Vector3 worldPos = mainCamera.ScreenToWorldPoint(mouseWorldPosition);
+        transform.position = new Vector3(worldPos.x,transform.position.y,transform.position.z);
+
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            SpawnFlower();
+        }
     }
 
-    private void Instantiate()
+    public void SpawnFlower()
     {
-        var flower = flowerCollection[Random.Range(0, flowerCollection.Count)];
+        FlowerData data = flowerCollection.flowers[Random.Range(0, flowerCollection.flowers.Count)];
+        GameObject tempFlower = Instantiate(flowerPrefab, transform.position, Quaternion.identity);
+        tempFlower.GetComponent<SpriteRenderer>().sprite = data.flowerSprite;
         
-       if (Input.GetMouseButtonDown(0))
-       {
-           Instantiate(flower, transform.position, transform.rotation);
-       }
     }
 }
