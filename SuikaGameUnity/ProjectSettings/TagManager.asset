@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Flower
   layers:
   - Default
   - TransparentFX
@@ -49,6 +50,9 @@ TagManager:
     locked: 0
   - name: Flowers
     uniqueID: 1964467745
+    locked: 0
+  - name: Gameplay
+    uniqueID: 4050528263
     locked: 0
   m_RenderingLayers:
   - Default

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f45f855dc3973234aac32d35108d8936
+guid: 62de4d711e5cf3f4f945cf41d171cfbc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -757174712443484418
-    second: panel_bg_default_0
+      213: -3584385421227003516
+    second: GameOverLine 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -97,7 +97,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WebGL
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -110,7 +110,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -126,23 +126,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: panel_bg_default_0
+      name: GameOverLine 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 112
-        height: 112
+        width: 1117
+        height: 80
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 55, y: 55, z: 55, w: 55}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ef6c5e75c99fd75f0800000000000000
-      internalID: -757174712443484418
+      spriteID: 481fca54374b14ec0800000000000000
+      internalID: -3584385421227003516
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c6914e6d0c8f44d409cf6bea583894e0
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -159,13 +159,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceOnImport
-        value: True
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":true,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      panel_bg_default_0: -757174712443484418
+      GameOverLine 1_0: -3584385421227003516
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
