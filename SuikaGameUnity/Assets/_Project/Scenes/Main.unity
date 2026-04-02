@@ -579,7 +579,7 @@ Transform:
   m_GameObject: {fileID: 1489014492}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 4.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -600,6 +600,7 @@ MonoBehaviour:
   mainCamera: {fileID: 519420031}
   flowerCollection: {fileID: 11400000, guid: cb856cdd50f21994e955635a3204ad5f, type: 2}
   flowerPrefab: {fileID: 1981221409224503385, guid: 0b98268469d48d94592059fbb0ba85bb, type: 3}
+  xClampValue: 3.6
 --- !u!212 &1489014495
 SpriteRenderer:
   serializedVersion: 2

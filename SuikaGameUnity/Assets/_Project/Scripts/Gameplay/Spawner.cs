@@ -7,14 +7,15 @@ public class Spawner : MonoBehaviour
     public FlowerCollection flowerCollection;
     public GameObject flowerPrefab;
     
-    private Vector3 mousePosition;
+    public float xClampValue = 3.6f;
 
     private void Update()
     {
         Vector2 screenPos = Mouse.current.position.ReadValue();
         Vector3 mouseWorldPosition = new Vector3(screenPos.x, screenPos.y, Mathf.Abs(mainCamera.transform.position.z));
         Vector3 worldPos = mainCamera.ScreenToWorldPoint(mouseWorldPosition);
-        transform.position = new Vector3(worldPos.x,transform.position.y,transform.position.z);
+        float xPosClamp = Mathf.Clamp(worldPos.x, -xClampValue, xClampValue);
+        transform.position = new Vector3(xPosClamp,transform.position.y,transform.position.z);
 
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
@@ -26,7 +27,7 @@ public class Spawner : MonoBehaviour
     {
         FlowerData data = flowerCollection.flowers[Random.Range(0, flowerCollection.flowers.Count)];
         GameObject tempFlower = Instantiate(flowerPrefab, transform.position, Quaternion.identity);
-        tempFlower.GetComponent<SpriteRenderer>().sprite = data.flowerSprite;
-        
+        Flower flowerScript = tempFlower.GetComponent<Flower>();
+        flowerScript.SetData(data);
     }
 }

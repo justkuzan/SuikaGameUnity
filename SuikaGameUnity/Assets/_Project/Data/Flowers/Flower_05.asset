@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8555781e1baf7684dbf86b6a26e842ac, type: 3}
   m_Name: Flower_05
   m_EditorClassIdentifier: Assembly-CSharp::FlowerData
-  flowerName: 
   flowerLevel: 5
   flowerSprite: {fileID: -6869655453523489442, guid: 17fad71122f05d14e887f56880979018, type: 3}
-  flowerPoints: 0
-  flowerPrice: 0
+  colliderRadius: 0.88

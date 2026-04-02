@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8555781e1baf7684dbf86b6a26e842ac, type: 3}
-  m_Name: Flower_04
+  m_Name: Flower_10
   m_EditorClassIdentifier: Assembly-CSharp::FlowerData
-  flowerLevel: 4
-  flowerSprite: {fileID: -1903302176078970856, guid: d9c94a13eba3eb14e8e1eb4ee82f4d79, type: 3}
-  colliderRadius: 0.8
+  flowerLevel: 10
+  flowerSprite: {fileID: 3822960401519956159, guid: 9b4acd7eb91e4254c99d0e668c9c3121, type: 3}
+  colliderRadius: 1.38

@@ -5,4 +5,5 @@ public class FlowerData : ScriptableObject
 {
     public int flowerLevel;
     public Sprite flowerSprite;
+    public float colliderRadius;
 }
