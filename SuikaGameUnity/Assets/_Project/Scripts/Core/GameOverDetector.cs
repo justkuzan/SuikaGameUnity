@@ -3,12 +3,11 @@ using UnityEngine;
 public class GameOverDetector : MonoBehaviour
 {
     public GameManager gameManager;
-    
     private void OnTriggerEnter2D(Collider2D collision)
     {   
         if (collision.CompareTag("Flower"))
         {
-            gameManager.addTime();
+            gameManager.AddTime();
         }
     }
     
@@ -16,7 +15,7 @@ public class GameOverDetector : MonoBehaviour
     {
         if (collision.CompareTag("Flower"))
         {
-            gameManager.subTime();
+            gameManager.SubTime();
         }
     }
 }

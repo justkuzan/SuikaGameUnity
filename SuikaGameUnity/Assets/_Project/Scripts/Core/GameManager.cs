@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GameSettings settings;
+    
     public GameObject gameOverScreen;
 
     private float loseTimer;
@@ -13,17 +15,17 @@ public class GameManager : MonoBehaviour
         if (flowersInZone > 0)
         {
             loseTimer += Time.deltaTime;
-            if (loseTimer >= 3f) gameOverScreen.SetActive(true);
+            if (loseTimer >= settings.loseTimerLimit) gameOverScreen.SetActive(true);
         }
         if (flowersInZone <= 0) loseTimer = 0;
     }
 
-    public void addTime()
+    public void AddTime()
     {   
         flowersInZone++;
     }
 
-    public void subTime()
+    public void SubTime()
     {
         flowersInZone--;
     }
