@@ -4,32 +4,40 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameSettings settings;
-    
     public GameObject gameOverScreen;
 
-    private float loseTimer;
-    private int flowersInZone;
+    private float _loseTimer;
+    private int _flowersInZone;
 
+    private void OnEnable()
+    {
+        GameEvents.OnZoneStatusChanged += HandleZoneChange;
+    }
+    
+    private void OnDisable()
+    {
+        GameEvents.OnZoneStatusChanged -= HandleZoneChange;
+    }
+    
+    private void HandleZoneChange(bool isInZone)
+    {
+        if (isInZone) _flowersInZone++;
+        else _flowersInZone--;
+    }
+    
     public void Update()
     {
-        if (flowersInZone > 0)
+        if (_flowersInZone > 0)
         {
-            loseTimer += Time.deltaTime;
-            if (loseTimer >= settings.loseTimerLimit) gameOverScreen.SetActive(true);
+            _loseTimer += Time.deltaTime;
+            if (_loseTimer >= settings.loseTimerLimit) gameOverScreen.SetActive(true);
         }
-        if (flowersInZone <= 0) loseTimer = 0;
+        else
+        {
+            _loseTimer = 0;
+        }
     }
-
-    public void AddTime()
-    {   
-        flowersInZone++;
-    }
-
-    public void SubTime()
-    {
-        flowersInZone--;
-    }
-
+    
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
