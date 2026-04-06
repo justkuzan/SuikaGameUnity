@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Flower_07
   m_EditorClassIdentifier: Assembly-CSharp::FlowerData
   flowerLevel: 7
-  flowerSprite: {fileID: 3148639220741423510, guid: 782f4f77012a6f446a36ba5027de18ac, type: 3}
-  colliderRadius: 1.1
+  flowerSprite: {fileID: 21300000, guid: 782f4f77012a6f446a36ba5027de18ac, type: 3}
+  colliderRadius: 0.86

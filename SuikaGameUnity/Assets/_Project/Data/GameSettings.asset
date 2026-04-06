@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: GameSettings
   m_EditorClassIdentifier: Assembly-CSharp::GameSettings
   movementLimitX: 3.5
-  loseTimer: 10
+  loseTimerLimit: 10
