@@ -21,10 +21,7 @@ public class Flower : MonoBehaviour
         collision.gameObject.TryGetComponent<Flower>(out Flower other);
         if (other != null)
         {
-            if (other.FlowerLevel != FlowerLevel)
-            {
-                return;
-            }
+            if (other.FlowerLevel != FlowerLevel) return;
 
             if (this.gameObject.GetInstanceID() < other.gameObject.GetInstanceID())
             {

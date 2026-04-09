@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameSettings settings;
+    
     public GameObject gameOverScreen;
 
     private float _loseTimer;
