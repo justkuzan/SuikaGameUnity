@@ -889,7 +889,7 @@ GameObject:
   - component: {fileID: 834116156}
   - component: {fileID: 834116155}
   - component: {fileID: 834116157}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GameOverLine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1801,6 +1801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4e04b9eea24b9d48a5cace393663f72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
+  settings: {fileID: 11400000, guid: d23c1c614aa22f04295acf5d5be4b2d1, type: 2}
   spawnManager: {fileID: 1196522582}
   flowerPrefab: {fileID: 1981221409224503385, guid: 0b98268469d48d94592059fbb0ba85bb, type: 3}
   inputManager: {fileID: 1139065950}

@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class InputManager : MonoBehaviour
 {
@@ -27,7 +27,7 @@ public class InputManager : MonoBehaviour
         float xPosClamp = Mathf.Clamp(worldPos.x, -settings.movementLimitX, settings.movementLimitX);
         generatedX = xPosClamp;
         
-        if (_inputActions.Player.Attack.WasPressedThisFrame())
+        if (_inputActions.Player.Attack.WasReleasedThisFrame() && !EventSystem.current.IsPointerOverGameObject())
         {
             InputClicked();
         }

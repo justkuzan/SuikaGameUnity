@@ -14,7 +14,7 @@ public class GameOverDetector : MonoBehaviour
     {
         if (collision.CompareTag("Flower"))
         {
-            GameEvents.OnZoneStatusChanged.Invoke(false);
+            GameEvents.OnZoneStatusChanged?.Invoke(false);
         }
     }
 }

@@ -40,10 +40,12 @@ public class Flower : MonoBehaviour
         if (isPassive)
         {
             flowerRB.bodyType = RigidbodyType2D.Kinematic;
+             gameObject.layer = LayerMask.NameToLayer("FlowerPreview");
         }
         else
         {
             flowerRB.bodyType = RigidbodyType2D.Dynamic;
+            gameObject.layer = LayerMask.NameToLayer("Flower");
         }
     }
 }
