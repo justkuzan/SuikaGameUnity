@@ -1416,6 +1416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37575c71270a1cf409d5d1a4e28e23ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnManager
+  settings: {fileID: 11400000, guid: d23c1c614aa22f04295acf5d5be4b2d1, type: 2}
   flowerCollection: {fileID: 11400000, guid: cb856cdd50f21994e955635a3204ad5f, type: 2}
 --- !u!4 &1196522583
 Transform:

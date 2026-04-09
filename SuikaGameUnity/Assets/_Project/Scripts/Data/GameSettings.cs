@@ -8,4 +8,9 @@ public class GameSettings : ScriptableObject
     
     [Header("General Gameplay")]
     public float loseTimerLimit;
+    
+    [Header("Early Game Drops")]
+    public int lvl1DropQuantity;
+    public int lvl2DropQuantity;
+    public int lvl3DropQuantity;
 }

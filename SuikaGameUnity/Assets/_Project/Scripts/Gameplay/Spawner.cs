@@ -23,7 +23,7 @@ public class Spawner : MonoBehaviour
     
     public void SpawnFlower()
     {
-        FlowerData data = spawnManager.GetRandomFlowerData();
+        FlowerData data = spawnManager.GetNextFlowerData();
         GameObject tempFlower = Instantiate(flowerPrefab, transform.position, Quaternion.identity);
         Flower flowerScript = tempFlower.GetComponent<Flower>();
         flowerScript.SetData(data);
