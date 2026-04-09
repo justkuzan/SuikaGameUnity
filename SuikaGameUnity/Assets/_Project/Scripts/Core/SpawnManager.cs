@@ -8,6 +8,9 @@ public class SpawnManager : MonoBehaviour
 
     private int _totalSpawns;
     private float _totalRate;
+    private FlowerData _currentFlower;
+    private FlowerData _nextFlower;
+    
     
     public FlowerData GetNextFlowerData()
     {

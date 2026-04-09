@@ -4,6 +4,7 @@ public class MergeManager : MonoBehaviour
 {
     [SerializeField] private GameObject flowerPrefab;
     
+    
     private void OnEnable()
     {
         GameEvents.OnFlowersCollided += HandleMerge;

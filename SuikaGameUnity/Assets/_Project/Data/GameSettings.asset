@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: GameSettings
   m_EditorClassIdentifier: Assembly-CSharp::GameSettings
   movementLimitX: 3.5
+  spawnCooldown: 0.75
   loseTimerLimit: 10
   lvl1DropQuantity: 3
   lvl2DropQuantity: 7
