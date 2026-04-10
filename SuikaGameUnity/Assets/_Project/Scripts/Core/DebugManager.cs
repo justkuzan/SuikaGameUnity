@@ -3,8 +3,11 @@ using UnityEngine.InputSystem;
 
 public class DebugManager : MonoBehaviour
 {
-    public GameObject debugPanel;
-    public Spawner spawner;
+    [SerializeField] private GameSettings settings;
+    [SerializeField] private GameObject flowerPrefab;
+    [SerializeField] private SpawnManager spawnManager;
+    [SerializeField] private GameObject debugPanel;
+    
     
     public void Update()
     {
@@ -20,7 +23,17 @@ public class DebugManager : MonoBehaviour
 
         for (int i = 0; i < flowersToSpawn-1; i++)
         {
-            spawner.SpawnFlower();
+            float randomX = Random.Range(-settings.movementLimitX, settings.movementLimitX);
+            Vector3 randomPosition = new Vector3(randomX, 5, 0);
+            
+            int randomIndex = Random.Range(0, spawnManager.flowerCollection.flowers.Count);
+            FlowerData data = spawnManager.flowerCollection.flowers[randomIndex];
+            
+            GameObject newObject = Instantiate(flowerPrefab, randomPosition, Quaternion.identity);
+            
+            Flower flowerScript = newObject.GetComponent<Flower>();
+            flowerScript.SetData(data);
+            flowerScript.SetPhysics(false);
         }
     }
     

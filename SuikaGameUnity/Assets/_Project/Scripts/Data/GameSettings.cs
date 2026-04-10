@@ -14,4 +14,8 @@ public class GameSettings : ScriptableObject
     public int lvl1DropQuantity;
     public int lvl2DropQuantity;
     public int lvl3DropQuantity;
+    
+    [Header("Flower and Merge Physics")]
+    public float mergeJumpForce;
+    public float mergeRotationForce;
 }

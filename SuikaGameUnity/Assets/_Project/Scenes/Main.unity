@@ -1709,6 +1709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f97901c82f5a8c443a4952edefc814a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MergeManager
+  settings: {fileID: 11400000, guid: d23c1c614aa22f04295acf5d5be4b2d1, type: 2}
   flowerPrefab: {fileID: 1981221409224503385, guid: 0b98268469d48d94592059fbb0ba85bb, type: 3}
   mergeParticlesPrefab: {fileID: 6998812077009394328, guid: 5416dca9cdde7a94883e76f939ffea0a, type: 3}
 --- !u!4 &1335727712
@@ -2120,8 +2121,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 741c4d9f4705c2049a95d9796a0f4a44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DebugManager
+  settings: {fileID: 11400000, guid: d23c1c614aa22f04295acf5d5be4b2d1, type: 2}
+  flowerPrefab: {fileID: 1981221409224503385, guid: 0b98268469d48d94592059fbb0ba85bb, type: 3}
+  spawnManager: {fileID: 1196522582}
   debugPanel: {fileID: 1997868269}
-  spawner: {fileID: 1489014494}
 --- !u!4 &1708275324
 Transform:
   m_ObjectHideFlags: 0
@@ -2561,7 +2564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &2084497657
 SpriteRenderer:
   serializedVersion: 2
