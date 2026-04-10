@@ -51,6 +51,9 @@ TagManager:
   - name: Flowers
     uniqueID: 1964467745
     locked: 0
+  - name: FlowersEffects
+    uniqueID: 837811705
+    locked: 0
   - name: Gameplay
     uniqueID: 4050528263
     locked: 0

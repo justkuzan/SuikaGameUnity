@@ -3,6 +3,7 @@ using UnityEngine;
 public class MergeManager : MonoBehaviour
 {
     [SerializeField] private GameObject flowerPrefab;
+    [SerializeField] private ParticleSystem mergeParticlesPrefab;
     
     
     private void OnEnable()
@@ -15,14 +16,21 @@ public class MergeManager : MonoBehaviour
         GameEvents.OnFlowersCollided -= HandleMerge;
     }
 
-    public void HandleMerge(FlowerData data, Vector3 flowerPosition)
+    public void HandleMerge(FlowerData currentData, FlowerData nextData, Vector3 flowerPosition)
     {
-        if (data == null) Debug.Log("This was a last one");
-        else
+        ParticleSystem instance = Instantiate(mergeParticlesPrefab, flowerPosition, Quaternion.identity);
+        ParticleSystemRenderer psRenderer = instance.GetComponent<ParticleSystemRenderer>();
+        psRenderer.material.mainTexture = currentData.petalSprite;
+        instance.Play();
+
+        if (nextData != null)
         {
             GameObject tempFlower = Instantiate(flowerPrefab, flowerPosition, Quaternion.identity);
-            Flower flowerScript = tempFlower.GetComponent<Flower>();
-            flowerScript.SetData(data);
+            tempFlower.GetComponent<Flower>().SetData(nextData);
+        }
+        else
+        {
+            Debug.Log("This was a last one");
         }
         
     }

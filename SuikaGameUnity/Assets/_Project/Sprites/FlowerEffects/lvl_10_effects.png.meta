@@ -113,6 +113,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: WebGL
+    maxTextureSize: 256
+    resizeAlgorithm: 0
+    textureFormat: 50
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -131,12 +144,12 @@ TextureImporter:
       name: lvl_10_effects_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 116
-        width: 108
-        height: 103
+        x: 0
+        y: 110
+        width: 110
+        height: 110
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -153,12 +166,12 @@ TextureImporter:
       name: lvl_10_effects_1
       rect:
         serializedVersion: 2
-        x: 118
-        y: 119
-        width: 95
-        height: 93
+        x: 110
+        y: 110
+        width: 110
+        height: 110
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -175,12 +188,12 @@ TextureImporter:
       name: lvl_10_effects_2
       rect:
         serializedVersion: 2
-        x: 227
-        y: 119
-        width: 97
-        height: 90
+        x: 220
+        y: 110
+        width: 110
+        height: 110
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -202,7 +215,7 @@ TextureImporter:
         width: 110
         height: 110
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -219,12 +232,12 @@ TextureImporter:
       name: lvl_10_effects_4
       rect:
         serializedVersion: 2
-        x: 118
-        y: 4
-        width: 98
-        height: 97
+        x: 110
+        y: 0
+        width: 110
+        height: 110
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -241,12 +254,12 @@ TextureImporter:
       name: lvl_10_effects_5
       rect:
         serializedVersion: 2
-        x: 227
-        y: 3
-        width: 92
-        height: 103
+        x: 220
+        y: 0
+        width: 110
+        height: 110
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -263,7 +276,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7de7ba4270c6b7347960b86c81624146
     internalID: 0
     vertices: []
     indices: 
@@ -271,7 +284,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":2.0},"gridSpriteSize":{"x":110.0,"y":110.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       lvl_10_effects_0: -7441830292654080177
       lvl_10_effects_1: 5724672547759213825

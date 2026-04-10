@@ -23,12 +23,12 @@ public class Flower : MonoBehaviour
         
         collision.gameObject.TryGetComponent<Flower>(out Flower other);
         if (other != null)
-        {
+        {   
             if (other.FlowerLevel != FlowerLevel) return;
 
             if (this.gameObject.GetInstanceID() < other.gameObject.GetInstanceID())
             {
-                GameEvents.OnFlowersCollided?.Invoke(_data.nextLevelData, collision.GetContact(0).point);
+                GameEvents.OnFlowersCollided?.Invoke(_data, _data.nextLevelData, collision.GetContact(0).point);
                 Destroy(this.gameObject);
                 Destroy(other.gameObject);
             }

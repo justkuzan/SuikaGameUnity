@@ -16,5 +16,6 @@ public class FlowerData : ScriptableObject
     [Header("Resources")]
     public Sprite flowerSprite;
     public FlowerData nextLevelData;
+    public Texture2D petalSprite;
     
 }

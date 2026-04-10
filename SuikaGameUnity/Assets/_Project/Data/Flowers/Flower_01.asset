@@ -18,3 +18,4 @@ MonoBehaviour:
   dropRate: 40
   flowerSprite: {fileID: 21300000, guid: 334f4505572adfd43aeec8a15092653c, type: 3}
   nextLevelData: {fileID: 11400000, guid: 4d514b086ac9d914e87ffe8f90cc8d1a, type: 2}
+  petalSprite: {fileID: 2800000, guid: 4941381d139ecb845a657f812f5e6a7f, type: 3}

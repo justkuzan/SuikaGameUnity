@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Flower_10
   m_EditorClassIdentifier: Assembly-CSharp::FlowerData
   flowerLevel: 10
-  flowerSprite: {fileID: 21300000, guid: 9b4acd7eb91e4254c99d0e668c9c3121, type: 3}
-  colliderRadius: 1.08
-  nextLevelData: {fileID: 0}
   scoreReward: 50
+  colliderRadius: 1.08
+  dropRate: 0
+  flowerSprite: {fileID: 21300000, guid: 9b4acd7eb91e4254c99d0e668c9c3121, type: 3}
+  nextLevelData: {fileID: 0}
+  petalSprite: {fileID: 2800000, guid: 9317055101bd018428e8dd5547061fcc, type: 3}
