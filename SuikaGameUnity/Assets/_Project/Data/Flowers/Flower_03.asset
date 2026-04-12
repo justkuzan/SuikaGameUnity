@@ -15,7 +15,7 @@ MonoBehaviour:
   flowerLevel: 3
   scoreReward: 1
   colliderRadius: 0.57
-  flowerMass: 0.7
+  flowerMass: 0.62
   dropRate: 20
   flowerSprite: {fileID: 21300000, guid: 366247d20d2a68946afe346dd5b8a858, type: 3}
   nextLevelData: {fileID: 11400000, guid: 03843c6ba1222e4439741108b512b502, type: 2}
