@@ -27,7 +27,7 @@ public class Flower : MonoBehaviour
         {   
             if (other.FlowerLevel != FlowerLevel) return;
 
-            if (this.gameObject.GetInstanceID() < other.gameObject.GetInstanceID())
+            if (this.gameObject.GetEntityId() < other.gameObject.GetEntityId())
             {
                 GameEvents.OnFlowersCollided?.Invoke(_data, _data.nextLevelData, collision.GetContact(0).point);
                 Destroy(this.gameObject);

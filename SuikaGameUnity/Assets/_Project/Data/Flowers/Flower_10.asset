@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Flower_10
   m_EditorClassIdentifier: Assembly-CSharp::FlowerData
   flowerLevel: 10
-  scoreReward: 50
+  scoreReward: 100
   colliderRadius: 1.08
   flowerMass: 2
   dropRate: 0
