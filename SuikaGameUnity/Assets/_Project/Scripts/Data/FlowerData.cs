@@ -9,6 +9,7 @@ public class FlowerData : ScriptableObject
     
     [Header("Physics")]
     public float colliderRadius;
+    public float flowerMass;
     
     [Header("Drop Rate")]
     public float dropRate;
