@@ -38,6 +38,10 @@ public class Spawner : MonoBehaviour
         if (_currentFlower == null) return;
         _currentFlower.transform.SetParent(null);
         _currentFlower.SetPhysics(false);
+        
+        Vector2 dropVector = new Vector2(0, -1f);
+        _currentFlower.flowerRB.AddForce(dropVector.normalized * settings.dropImpulse, ForceMode2D.Impulse);;
+        
         _currentFlower = null;
         _lastSpawnTime = Time.time;
         

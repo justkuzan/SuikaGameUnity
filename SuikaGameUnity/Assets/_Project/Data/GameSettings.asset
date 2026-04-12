@@ -18,5 +18,7 @@ MonoBehaviour:
   lvl1DropQuantity: 3
   lvl2DropQuantity: 7
   lvl3DropQuantity: 12
-  mergeJumpForce: 6
+  mergeJumpForce: 5
   mergeRotationForce: 1.3
+  dropImpulse: 3
+  dropRandomHorizontalForce: 0

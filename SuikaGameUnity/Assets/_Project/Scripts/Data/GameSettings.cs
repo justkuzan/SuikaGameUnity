@@ -18,4 +18,5 @@ public class GameSettings : ScriptableObject
     [Header("Flower and Merge Physics")]
     public float mergeJumpForce;
     public float mergeRotationForce;
+    public float dropImpulse;
 }
