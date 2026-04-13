@@ -25,11 +25,13 @@ public class Spawner : MonoBehaviour
     private void OnEnable()
     {
         GameEvents.OnInputClick += SpawnFlower;
+        GameEvents.OnGameOver += OnGameOver;
     }
     
     private void OnDisable()
     {
         GameEvents.OnInputClick -= SpawnFlower;
+        GameEvents.OnGameOver -= OnGameOver;
     }
     
     public void SpawnFlower()
@@ -57,5 +59,11 @@ public class Spawner : MonoBehaviour
         _currentFlower.SetPhysics(true);
        
         _currentFlower.transform.SetParent(this.transform);
+    }
+
+    public void OnGameOver()
+    {
+        this.enabled = false;
+        GameEvents.OnGameOver -= OnGameOver;
     }
 }

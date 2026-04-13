@@ -31,7 +31,11 @@ public class GameManager : MonoBehaviour
         if (_flowersInZone > 0)
         {
             _loseTimer += Time.deltaTime;
-            if (_loseTimer >= settings.loseTimerLimit) gameOverScreen.SetActive(true);
+            if (_loseTimer >= settings.loseTimerLimit && !gameOverScreen.activeSelf)
+            {
+                gameOverScreen.SetActive(true);
+                GameEvents.OnGameOver?.Invoke();
+            }
         }
         else
         {
