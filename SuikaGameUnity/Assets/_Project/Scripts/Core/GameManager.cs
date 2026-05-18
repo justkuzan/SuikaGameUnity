@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     
     public GameObject gameOverScreen;
 
+    private bool _isPaused = false;
     private float _loseTimer;
     private int _flowersInZone;
 
@@ -24,17 +25,18 @@ public class GameManager : MonoBehaviour
     {
         if (isInZone) _flowersInZone++;
         else _flowersInZone--;
+        if (_flowersInZone < 0) _flowersInZone = 0;
     }
     
     public void Update()
     {
-        if (_flowersInZone > 0)
+        if (_flowersInZone > 0 && !_isPaused)
         {
             _loseTimer += Time.deltaTime;
+            
             if (_loseTimer >= settings.loseTimerLimit && !gameOverScreen.activeSelf)
             {
-                gameOverScreen.SetActive(true);
-                GameEvents.OnGameOver?.Invoke();
+                TriggerGameOver();
             }
         }
         else
@@ -42,9 +44,29 @@ public class GameManager : MonoBehaviour
             _loseTimer = 0;
         }
     }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0f;
+        _isPaused = true;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f;
+        _isPaused = false;
+    }
+
+    private void TriggerGameOver()
+    {
+        gameOverScreen.SetActive(true);
+        Time.timeScale = 0f;
+        GameEvents.OnGameOver?.Invoke();
+    }
     
     public void RestartGame()
     {
+        
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
