@@ -346,7 +346,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &373956241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -448,6 +448,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameoverScoreView
   scoreManager: {fileID: 1009347343}
   currentScoreText: {fileID: 1434695632}
+  highScoreText: {fileID: 1306744885}
 --- !u!1 &510276748
 GameObject:
   m_ObjectHideFlags: 0
@@ -2112,7 +2113,7 @@ GameObject:
   - component: {fileID: 1306744886}
   - component: {fileID: 1306744885}
   m_Layer: 5
-  m_Name: BestScore-Text (TMP)
+  m_Name: HighScore-Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

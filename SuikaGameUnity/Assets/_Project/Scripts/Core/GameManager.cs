@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,11 @@ public class GameManager : MonoBehaviour
     private bool _isPaused = false;
     private float _loseTimer;
     private int _flowersInZone;
+
+    private void Start()
+    {
+        Time.timeScale = 1f;
+    }
 
     private void OnEnable()
     {
