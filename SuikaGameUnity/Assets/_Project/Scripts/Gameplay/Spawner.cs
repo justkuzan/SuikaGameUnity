@@ -6,6 +6,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private SpawnManager spawnManager;
     [SerializeField] private GameObject flowerPrefab;
     [SerializeField] private InputManager inputManager;
+    [SerializeField] private GameObject targetLine;
     
     private Flower _currentFlower;
     private float _lastSpawnTime;
@@ -24,20 +25,32 @@ public class Spawner : MonoBehaviour
     
     private void OnEnable()
     {
-        GameEvents.OnInputClick += SpawnFlower;
-        GameEvents.OnGameOver += OnGameOver;
+        GameEvents.OnInputClick += InputClick;
+        GameEvents.OnInputPressed += InputPressed;
+        GameEvents.OnGameOver += GameOver;
     }
     
     private void OnDisable()
     {
-        GameEvents.OnInputClick -= SpawnFlower;
-        GameEvents.OnGameOver -= OnGameOver;
+        GameEvents.OnInputClick -= InputClick;
+        GameEvents.OnInputPressed -= InputPressed;
+        GameEvents.OnGameOver -= GameOver;
     }
-    
+
+    public void InputClick()
+    {
+        SpawnFlower();
+    }
+
+    public void InputPressed()
+    {
+        ShowTargetLine();
+    }
+
+    private bool CanSpawn => Time.time >= _lastSpawnTime + settings.spawnCooldown && _currentFlower != null;
     public void SpawnFlower()
     {
-        if (Time.time < _lastSpawnTime + settings.spawnCooldown) return;
-        if (_currentFlower == null) return;
+        if (!CanSpawn) return;
         _currentFlower.transform.SetParent(null);
         _currentFlower.SetPhysics(false);
         
@@ -48,8 +61,16 @@ public class Spawner : MonoBehaviour
         _lastSpawnTime = Time.time;
         
         Invoke(nameof(CreateFlowerInSpawner), settings.spawnCooldown);
+        
+        targetLine.SetActive(false);
     }
 
+    public void ShowTargetLine()
+    {
+        if (!CanSpawn) return;
+        targetLine.SetActive(true);
+    }
+    
     public void CreateFlowerInSpawner()
     {
         FlowerData data = spawnManager.GetNextFlowerData();
@@ -58,12 +79,12 @@ public class Spawner : MonoBehaviour
         _currentFlower.SetData(data);
         _currentFlower.SetPhysics(true);
        
-        _currentFlower.transform.SetParent(this.transform);
+        _currentFlower.transform.SetParent(transform);
     }
 
-    public void OnGameOver()
+    public void GameOver()
     {
-        this.enabled = false;
-        GameEvents.OnGameOver -= OnGameOver;
+        enabled = false;
+        GameEvents.OnGameOver -= GameOver;
     }
 }

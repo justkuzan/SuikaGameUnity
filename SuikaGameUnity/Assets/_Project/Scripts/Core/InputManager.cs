@@ -26,8 +26,13 @@ public class InputManager : MonoBehaviour
         
         float xPosClamp = Mathf.Clamp(worldPos.x, -settings.movementLimitX, settings.movementLimitX);
         generatedX = xPosClamp;
+
+        if (_inputActions.Player.Attack.WasPressedThisFrame() && !EventSystem.current.IsPointerOverGameObject())
+        {
+            InputPressed();
+        }
         
-        if (_inputActions.Player.Attack.WasReleasedThisFrame() && !EventSystem.current.IsPointerOverGameObject())
+        if (_inputActions.Player.Attack.WasReleasedThisFrame())
         {
             InputClicked();
         }
@@ -36,5 +41,10 @@ public class InputManager : MonoBehaviour
     public void InputClicked()
     {
         GameEvents.OnInputClick?.Invoke();
+    }
+
+    public void InputPressed()
+    {
+        GameEvents.OnInputPressed?.Invoke();
     }
 }
