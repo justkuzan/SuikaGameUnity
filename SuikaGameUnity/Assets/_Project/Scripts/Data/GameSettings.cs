@@ -9,6 +9,7 @@ public class GameSettings : ScriptableObject
     [Header("General Gameplay")]
     public float spawnCooldown;
     public float loseTimerLimit;
+    public float gameOverLineTimerLimit;
     
     [Header("Early Game Drops")]
     public int lvl1DropQuantity;
