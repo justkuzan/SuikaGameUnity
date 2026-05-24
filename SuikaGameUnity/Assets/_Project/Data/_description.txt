@@ -1,2 +1,0 @@
-ScriptableObjects
-GameBalance.asset
