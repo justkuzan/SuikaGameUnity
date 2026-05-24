@@ -5,11 +5,9 @@ public class AudioManager : MonoBehaviour
 {
 	public static AudioManager Instance { get; private set; }
 
-	[SerializeField] private AudioConfig backgroundMusic;
-
 	[SerializeField] private AudioMixer mainMixer;
-	[SerializeField] private AudioSource musicSource;
 	[SerializeField] private AudioSource sfxSource;
+	[SerializeField] private AudioSource[] musicSource;
 
 	private void Awake()
 	{
@@ -23,11 +21,6 @@ public class AudioManager : MonoBehaviour
 		DontDestroyOnLoad(gameObject);
 	}
 
-	private void Start()
-	{
-		Instance.playMusic(backgroundMusic);
-	}
-
 	public void PlaySFX(AudioConfig config)
 	{
 		if (config == null || config.audioClip == null) return;
@@ -39,14 +32,23 @@ public class AudioManager : MonoBehaviour
 	public void playMusic(AudioConfig config)
 	{
 		if (config == null || config.audioClip == null) return;
-		if (musicSource.clip == config.audioClip && musicSource.isPlaying) return;
-		musicSource.outputAudioMixerGroup = config.audioMixerGroup;
-		musicSource.clip = config.audioClip;
-		musicSource.volume = config.volume;
-		musicSource.pitch = 1;
-		musicSource.loop = true;
-
-		musicSource.Play();
+		foreach (var source in musicSource)
+		{
+			if (source.clip == config.audioClip && source.isPlaying) return;
+		}
+		foreach (var source in musicSource)
+		{
+			if (!source.isPlaying)
+			{
+				source.outputAudioMixerGroup = config.audioMixerGroup;
+				source.clip = config.audioClip;
+				source.volume = config.volume;
+				source.pitch = 1f;
+				source.loop = true;
+				source.Play();
+				return;
+			}
+		}
 	}
 
 	public void SetMusicActive(bool isActive)
