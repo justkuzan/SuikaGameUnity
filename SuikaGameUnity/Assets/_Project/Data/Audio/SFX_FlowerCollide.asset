@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7e25fc8c7bb31104e9e044b5d288cf60, type: 3}
-  m_Name: Ambience
+  m_Name: SFX_FlowerCollide
   m_EditorClassIdentifier: Assembly-CSharp::AudioConfig
-  audioClip: {fileID: 8300000, guid: 3e3d6dff50f34a044b551a71b49329af, type: 3}
+  audioClip: {fileID: 8300000, guid: 71ba84e1c91fdc640bfceb046100e0a9, type: 3}
   volume: 1
   pitch: 1
   pitchRandomness: 0
-  audioMixerGroup: {fileID: -4190818541643132660, guid: 15d46481f28b7fc45aea2f82f3e055ad, type: 2}
+  audioMixerGroup: {fileID: -8100581825783044969, guid: 15d46481f28b7fc45aea2f82f3e055ad, type: 2}
