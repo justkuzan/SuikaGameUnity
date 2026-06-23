@@ -3,22 +3,13 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
-	public static AudioManager Instance { get; private set; }
-
 	[SerializeField] private AudioMixer mainMixer;
 	[SerializeField] private AudioSource sfxSource;
 	[SerializeField] private AudioSource[] musicSource;
 
 	private void Awake()
 	{
-		if (Instance != null && Instance != this)
-		{
-			Destroy(gameObject);
-			return;
-		}
-
-		Instance = this;
-		DontDestroyOnLoad(gameObject);
+		_Project.Scripts.Utils.Services.Audio = this;
 	}
 
 	public void PlaySFX(AudioConfig config)
