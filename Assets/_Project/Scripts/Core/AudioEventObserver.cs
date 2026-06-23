@@ -11,10 +11,7 @@ public class AudioEventObserver : MonoBehaviour
 
 	private void OnEnable()
 	{
-		// Подписываемся на твои экшены из GameEvents
 		GameEvents.OnInputClick += PlayClick;
-		// Сюда же дописываешь остальные события, например:
-		// GameEvents.OnFlowerMerged += PlayMerge;
 	}
 
 	private void OnDisable()
@@ -24,11 +21,11 @@ public class AudioEventObserver : MonoBehaviour
 
 	private void PlayClick()
 	{
-		AudioManager.Instance.PlaySFX(clickSound);
+		_Project.Scripts.Utils.Services.Audio.PlaySFX(clickSound);
 	}
 
 	private void PlayMerge()
 	{
-		AudioManager.Instance.PlaySFX(mergeSound);
+		_Project.Scripts.Utils.Services.Audio.PlaySFX(mergeSound);
 	}
 }

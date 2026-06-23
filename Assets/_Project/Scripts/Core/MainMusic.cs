@@ -7,7 +7,7 @@ public class MainMusic : MonoBehaviour
 
 	private void Start()
 	{
-		AudioManager.Instance.playMusic(mainTheme);
-		AudioManager.Instance.playMusic(ambientBackground);
+		_Project.Scripts.Utils.Services.Audio.playMusic(mainTheme);
+		_Project.Scripts.Utils.Services.Audio.playMusic(ambientBackground);
 	}
 }
