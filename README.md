@@ -4,7 +4,7 @@
 
 > **Suika-style merge puzzle** with a focus on clean architecture, high-end UI, and polished game feel.
 
-**[▶ Play in Browser (Yandex Games - Coming Soon)](#)** | **[▶ Play on itch.io](https://cutecootgames.itch.io/my-favorite-dacha)**
+**[▶ Play in Browser (Yandex Games - Coming Soon)](#)** | **[▶ Play on itch.io](https://cutecootgames.itch.io/dacha)**
 
 ---
 
