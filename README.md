@@ -42,25 +42,6 @@ The project is currently undergoing a major refactoring to meet **Middle-level**
 
 ---
 
-## 📂 Project Structure
-
-Assets/
-├── \_Project/
-│ ├── Art/ # Sprites, Materials, Shaders
-│ ├── Audio/ # Configs and Samples
-│ ├── Configs/ # ScriptableObject Data (Flowers, Balance)
-│ ├── Prefabs/ # Game entities and UI elements
-│ ├── Resources/ # [GlobalContext] for app initialization
-│ ├── Scenes/ # Bootstrap and Main levels
-│ └── Scripts/
-│ ├── Core/ # App initialization and Service Locator
-│ ├── Gameplay/ # Merge logic, Spawner, Physics
-│ ├── UI/ # View components and HUD
-│ └── Utils/ # Event Bus, Extensions, Helpers
-└── Plugins/ # Third-party assets (TextMesh Pro, etc.)
-
----
-
 ## 📈 Roadmap (In Progress)
 
 - [x] Scene-independent Bootstrap.
