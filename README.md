@@ -34,7 +34,7 @@ The project is currently undergoing a major refactoring to meet **Middle-level**
 
 ## 💻 Tech Stack
 
-- **Engine:** Unity 2022.3+ (URP)
+- **Engine:** Unity 6004 (URP)
 - **Code Style:** Clean C#, **Conventional Commits**, Namespace-based organization.
 - **Input:** New Unity Input System.
 - **UI:** UGUI with an adaptive layout for Mobile/Web.
