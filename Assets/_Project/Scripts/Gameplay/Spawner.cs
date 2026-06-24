@@ -1,11 +1,11 @@
 using UnityEngine;
+using _Project.Scripts.Utils;
 
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameSettings settings;
     [SerializeField] private SpawnManager spawnManager;
     [SerializeField] private GameObject flowerPrefab;
-    [SerializeField] private InputManager inputManager;
     [SerializeField] private GameObject targetLine;
     
     private Flower _currentFlower;
@@ -20,7 +20,10 @@ public class Spawner : MonoBehaviour
     
     private void Update()
     {
-        transform.position = new Vector3(inputManager.generatedX,transform.position.y,transform.position.z);
+        if (Services.Input != null)
+        {
+            transform.position = new Vector3(Services.Input.generatedX,transform.position.y,transform.position.z); 
+        }
     }
     
     private void OnEnable()

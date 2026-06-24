@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using _Project.Scripts.Utils;
 
 public class AudioManager : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class AudioManager : MonoBehaviour
 
 	private void Awake()
 	{
-		_Project.Scripts.Utils.Services.Audio = this;
+		Services.Audio = this;
 	}
 
 	public void PlaySFX(AudioConfig config)

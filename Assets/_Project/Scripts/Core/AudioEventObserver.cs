@@ -1,4 +1,5 @@
 using UnityEngine;
+using _Project.Scripts.Utils;
 
 public class AudioEventObserver : MonoBehaviour
 {
@@ -21,11 +22,11 @@ public class AudioEventObserver : MonoBehaviour
 
 	private void PlayClick()
 	{
-		_Project.Scripts.Utils.Services.Audio.PlaySFX(clickSound);
+		Services.Audio.PlaySFX(clickSound);
 	}
 
 	private void PlayMerge()
 	{
-		_Project.Scripts.Utils.Services.Audio.PlaySFX(mergeSound);
+		Services.Audio.PlaySFX(mergeSound);
 	}
 }

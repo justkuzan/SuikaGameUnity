@@ -1,4 +1,5 @@
 using UnityEngine;
+using _Project.Scripts.Utils;
 
 public class MainMusic : MonoBehaviour
 {
@@ -7,7 +8,7 @@ public class MainMusic : MonoBehaviour
 
 	private void Start()
 	{
-		_Project.Scripts.Utils.Services.Audio.playMusic(mainTheme);
-		_Project.Scripts.Utils.Services.Audio.playMusic(ambientBackground);
+		Services.Audio.playMusic(mainTheme);
+		Services.Audio.playMusic(ambientBackground);
 	}
 }

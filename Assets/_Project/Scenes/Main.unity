@@ -2037,53 +2037,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.72090304, y: 22.62472}
   m_EdgeRadius: 0
---- !u!1 &1139065949
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1139065951}
-  - component: {fileID: 1139065950}
-  m_Layer: 0
-  m_Name: InputManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1139065950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1139065949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 719fb4de161fefb4e82ccf5fb811f4dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InputManager
-  mainCamera: {fileID: 519420031}
-  settings: {fileID: 11400000, guid: d23c1c614aa22f04295acf5d5be4b2d1, type: 2}
-  generatedX: 0
---- !u!4 &1139065951
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1139065949}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1369980837}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1174330508
 GameObject:
   m_ObjectHideFlags: 0
@@ -2883,7 +2836,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1139065951}
   - {fileID: 570933858}
   - {fileID: 1708275324}
   - {fileID: 1196522583}
@@ -3076,7 +3028,7 @@ MonoBehaviour:
   settings: {fileID: 11400000, guid: d23c1c614aa22f04295acf5d5be4b2d1, type: 2}
   spawnManager: {fileID: 1196522582}
   flowerPrefab: {fileID: 1981221409224503385, guid: 0b98268469d48d94592059fbb0ba85bb, type: 3}
-  inputManager: {fileID: 1139065950}
+  inputManager: {fileID: 0}
   targetLine: {fileID: 1861355690}
 --- !u!1 &1592636434
 GameObject:
