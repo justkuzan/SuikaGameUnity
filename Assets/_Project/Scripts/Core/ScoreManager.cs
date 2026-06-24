@@ -1,6 +1,5 @@
-using System;
-using TMPro;
 using UnityEngine;
+using _Project.Scripts.Utils;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -10,11 +9,17 @@ public class ScoreManager : MonoBehaviour
     public int CurrentScore => _currentScore;
     public int HighScore => _highScore;
 
+    private void Awake()
+    {
+        Services.Score = this;
+    }
+    
     private void Start()
     {
         _highScore = PlayerPrefs.GetInt("HighScore", 0);
+        GameEvents.OnScoreChanged?.Invoke(_currentScore);
     }
-
+    
     private void OnEnable()
     {
         GameEvents.OnFlowersCollided += HandleScore;
@@ -24,7 +29,7 @@ public class ScoreManager : MonoBehaviour
     {
         GameEvents.OnFlowersCollided -= HandleScore;
     }
-
+    
     private void HandleScore(FlowerData flower1, FlowerData flower2, Vector3 position)
     {
         _currentScore += flower1.scoreReward;
@@ -33,9 +38,7 @@ public class ScoreManager : MonoBehaviour
         if (_currentScore > _highScore)
         {
             _highScore = _currentScore;
-            PlayerPrefs.SetInt("HighScore", _highScore);
-            
-            PlayerPrefs.Save();
+            Services.Save.SetDirty();
         }
     }
 }

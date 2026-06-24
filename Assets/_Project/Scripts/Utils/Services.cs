@@ -6,5 +6,7 @@ namespace _Project.Scripts.Utils
     {
         public static AudioManager Audio { get; set; }
         public static InputManager Input { get; set; }
+        public static ScoreManager Score { get; set; }
+        public static SaveManager Save { get; set; }
     }
 }
