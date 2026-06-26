@@ -1,14 +1,19 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using _Project.Scripts.Utils;
 
 public class DebugManager : MonoBehaviour
 {
     [SerializeField] private GameSettings settings;
     [SerializeField] private GameObject flowerPrefab;
-    [SerializeField] private SpawnManager spawnManager;
     [SerializeField] private GameObject debugPanel;
     
+    private void Awake()
+    {
+        Services.Debugger = this;
+    }
     
+    #if UNITY_EDITOR
     public void Update()
     {
         if (Keyboard.current.backquoteKey.wasPressedThisFrame)
@@ -16,6 +21,7 @@ public class DebugManager : MonoBehaviour
             debugPanel.SetActive(!debugPanel.activeSelf);
         }
     }
+    #endif
 
     public void SpawnFlowers10()
     {
@@ -26,8 +32,8 @@ public class DebugManager : MonoBehaviour
             float randomX = Random.Range(-settings.movementLimitX, settings.movementLimitX);
             Vector3 randomPosition = new Vector3(randomX, 5, 0);
             
-            int randomIndex = Random.Range(0, spawnManager.flowerCollection.flowers.Count);
-            FlowerData data = spawnManager.flowerCollection.flowers[randomIndex];
+            int randomIndex = Random.Range(0, Services.Spawner.flowerCollection.flowers.Count);
+            FlowerData data = Services.Spawner.flowerCollection.flowers[randomIndex];
             
             GameObject newObject = Instantiate(flowerPrefab, randomPosition, Quaternion.identity);
             

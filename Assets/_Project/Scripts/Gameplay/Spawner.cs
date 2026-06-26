@@ -4,7 +4,6 @@ using _Project.Scripts.Utils;
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameSettings settings;
-    [SerializeField] private SpawnManager spawnManager;
     [SerializeField] private GameObject flowerPrefab;
     [SerializeField] private GameObject targetLine;
     
@@ -76,7 +75,7 @@ public class Spawner : MonoBehaviour
     
     public void CreateFlowerInSpawner()
     {
-        FlowerData data = spawnManager.GetNextFlowerData();
+        FlowerData data = Services.Spawner.GetNextFlowerData();
         GameObject tempFlower = Instantiate(flowerPrefab, transform.position, Quaternion.identity);
         _currentFlower = tempFlower.GetComponent<Flower>();
         _currentFlower.SetData(data);

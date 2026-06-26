@@ -1,9 +1,9 @@
 using UnityEngine;
+using _Project.Scripts.Utils;
 
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField] private GameSettings settings;
-    
     public FlowerCollection flowerCollection;
 
     private int _totalSpawns;
@@ -11,6 +11,10 @@ public class SpawnManager : MonoBehaviour
     private FlowerData _currentFlower;
     private FlowerData _nextFlower;
     
+    private void Awake()
+    {
+        Services.Spawner = this;
+    }
     
     public FlowerData GetNextFlowerData()
     {

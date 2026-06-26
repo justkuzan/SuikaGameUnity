@@ -5,7 +5,7 @@ using _Project.Scripts.Utils;
 public class InputManager : MonoBehaviour
 {
 	[SerializeField] private GameSettings settings;
-
+	
 	private Camera _camera;
 	private InputSystem_Actions _inputActions;
 	private bool _isPointerOverUI;
