@@ -35,4 +35,9 @@ public class GameoverView : MonoBehaviour
             highScoreText.text = $"{bestScore}";
         }
     }
+    
+    public void OnRestartButtonClicked()
+    {
+        Services.Game.RestartGame();
+    }
 }

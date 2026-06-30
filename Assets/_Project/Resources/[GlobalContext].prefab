@@ -363,7 +363,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: -3526657369535396727}
         m_TargetAssemblyTypeName: DebugManager, Assembly-CSharp
         m_MethodName: SpawnFlowers10
         m_Mode: 1
@@ -1045,7 +1045,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: -3526657369535396727}
         m_TargetAssemblyTypeName: DebugManager, Assembly-CSharp
         m_MethodName: DeleteFlowers
         m_Mode: 1
