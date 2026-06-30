@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class ZoneDetector : MonoBehaviour
@@ -25,13 +24,14 @@ public class ZoneDetector : MonoBehaviour
 
     private void SendSignal(bool isInZone)
     {
-        if (zoneType == ZoneType.GameOver)
+        switch (zoneType)
         {
-            GameEvents.OnZoneStatusChanged?.Invoke(isInZone);
-        }
-        else if (zoneType == ZoneType.Warning)
-        {
-            GameEvents.OnWarningZoneStatusChanged?.Invoke(isInZone);
+            case ZoneType.GameOver:
+                GameEvents.OnZoneStatusChanged?.Invoke(isInZone);
+                break;
+            case ZoneType.Warning:
+                GameEvents.OnWarningZoneStatusChanged?.Invoke(isInZone);
+                break;
         }
     }
 }

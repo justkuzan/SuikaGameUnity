@@ -1,4 +1,5 @@
 using UnityEngine;
+using DG.Tweening;
 
 public class GameOverLineVisual : MonoBehaviour
 {
@@ -9,7 +10,9 @@ public class GameOverLineVisual : MonoBehaviour
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _spriteRenderer.enabled = false; 
+        Color c = _spriteRenderer.color;
+        _spriteRenderer.color = new Color(c.r, c.g, c.b, 0);
+        _spriteRenderer.enabled = true;
     }
     
     private void OnEnable()
@@ -29,23 +32,9 @@ public class GameOverLineVisual : MonoBehaviour
         
         if (_flowersInWarningZone < 0) _flowersInWarningZone = 0;
 
-        if (_flowersInWarningZone > 0)
-        {
-            if (!IsInvoking(nameof(ShowLine)) && !_spriteRenderer.enabled)
-            {
-                Invoke(nameof(ShowLine), settings.gameOverLineTimerLimit);
-            }
-        }
-        else
-        {
-            CancelInvoke(nameof(ShowLine));
-            _spriteRenderer.enabled = false;
-        }
+        float targetAlpha = (_flowersInWarningZone > 0) ? 1f : 0f;
+        float delay = (targetAlpha > 0) ? settings.gameOverLineTimerLimit : 0f;
+        _spriteRenderer.DOKill();
+        _spriteRenderer.DOFade(targetAlpha, 0.5f).SetDelay(delay);
     }
-    
-    private void ShowLine()
-    {
-        _spriteRenderer.enabled = true;
-    }
-    
 }

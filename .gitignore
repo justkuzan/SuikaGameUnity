@@ -13,6 +13,10 @@
 sysinfo.txt
 crashlytics-build.properties
 
+# --- Unnecessary Plugins
+Assets/Sortify/
+
+
 # --- IDEs (Visual Studio, VS Code, Rider) ---
 .vs/
 .vscode/
