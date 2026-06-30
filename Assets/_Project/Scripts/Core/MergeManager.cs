@@ -46,7 +46,6 @@ public class MergeManager : MonoBehaviour
         {
             Debug.Log("This was a last one");
         }
-        
     }
 
     private void Prewarm()
@@ -56,5 +55,7 @@ public class MergeManager : MonoBehaviour
         Destroy(tempFlower);
         
         ParticleSystem tempParticles = Instantiate(mergeParticlesPrefab, tempPosition, Quaternion.identity);
+        tempParticles.Emit(1);
+        Destroy(tempParticles.gameObject);
     }
 }
