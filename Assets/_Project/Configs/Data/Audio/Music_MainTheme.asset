@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Music_MainTheme
   m_EditorClassIdentifier: Assembly-CSharp::AudioConfig
   audioClip: {fileID: 8300000, guid: d64ec97562d83e248ad77daf23b8f3c6, type: 3}
-  volume: 1
+  volume: 0.2
   pitch: 1
   pitchRandomness: 0
-  audioMixerGroup: {fileID: -4190818541643132660, guid: 15d46481f28b7fc45aea2f82f3e055ad, type: 2}
+  audioMixerGroup: {fileID: -1665737355690909395, guid: 15d46481f28b7fc45aea2f82f3e055ad, type: 2}

@@ -54,6 +54,8 @@ public class Spawner : MonoBehaviour
     {
         if (!CanSpawn) return;
         _currentFlower.transform.SetParent(null);
+        GameEvents.OnFlowerDropped?.Invoke();
+        
         _currentFlower.SetPhysics(false);
         
         Vector2 dropVector = new Vector2(0, -1f);

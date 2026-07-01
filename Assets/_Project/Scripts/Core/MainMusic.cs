@@ -6,9 +6,8 @@ public class MainMusic : MonoBehaviour
 	[SerializeField] private AudioConfig mainTheme;
 	[SerializeField] private AudioConfig ambientBackground;
 
-	private void Start()
-	{
-		Services.Audio.playMusic(mainTheme);
-		Services.Audio.playMusic(ambientBackground);
-	}
+	private void Start() {
+		Services.Audio.PlayBGM(mainTheme);
+		Services.Audio.PlayAmbience(ambientBackground);
+	}	
 }

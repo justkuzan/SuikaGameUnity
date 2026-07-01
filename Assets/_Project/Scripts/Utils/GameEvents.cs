@@ -15,4 +15,6 @@ public static class GameEvents
     //gameplay
     public static Action<FlowerData, FlowerData, Vector3> OnFlowersCollided;
     public static Action<int> OnScoreChanged;
+    public static Action OnFlowerDropped;
+    public static Action OnFlowerHit;
 }

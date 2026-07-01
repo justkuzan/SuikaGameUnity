@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SFX_FlowerMerge
   m_EditorClassIdentifier: Assembly-CSharp::AudioConfig
   audioClip: {fileID: 8300000, guid: 7751075ad314f0e42a4618ce75799089, type: 3}
-  volume: 1
+  volume: 0.3
   pitch: 1
   pitchRandomness: 0
   audioMixerGroup: {fileID: -8100581825783044969, guid: 15d46481f28b7fc45aea2f82f3e055ad, type: 2}

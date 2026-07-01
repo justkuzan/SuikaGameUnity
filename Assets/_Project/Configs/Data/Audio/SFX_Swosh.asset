@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e25fc8c7bb31104e9e044b5d288cf60, type: 3}
   m_Name: SFX_Swosh
   m_EditorClassIdentifier: Assembly-CSharp::AudioConfig
-  audioClip: {fileID: 8300000, guid: efaa22d6f192acc4b84df6592ab92c7a, type: 3}
-  volume: 1
+  audioClip: {fileID: 8300000, guid: 476908a96e5a08d44bd29b446c70b1a7, type: 3}
+  volume: 0.75
   pitch: 1
   pitchRandomness: 0.08
   audioMixerGroup: {fileID: -8100581825783044969, guid: 15d46481f28b7fc45aea2f82f3e055ad, type: 2}

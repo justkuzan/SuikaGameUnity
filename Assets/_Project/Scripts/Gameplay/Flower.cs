@@ -5,12 +5,14 @@ public class Flower : MonoBehaviour
     public SpriteRenderer flowerSprite;
     public CircleCollider2D flowerCollider;
     public Rigidbody2D flowerRB;
-    private FlowerData _data;
-    private bool _isMerging = false;
     public int FlowerLevel => _data.flowerLevel;
     public bool IsMerging => _isMerging;
-    
 
+    private FlowerData _data;
+    private bool _isMerging = false;
+    private bool _hasHitSomething = false;
+
+    
     public void SetData(FlowerData data)
     {
         _data = data;
@@ -23,6 +25,12 @@ public class Flower : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (flowerRB.bodyType != RigidbodyType2D.Dynamic || _isMerging) return;
+        
+        if (!_hasHitSomething)
+        {
+            GameEvents.OnFlowerHit?.Invoke();
+            _hasHitSomething = true;
+        }
 
         if (collision.gameObject.TryGetComponent<Flower>(out Flower other))
         {
@@ -54,6 +62,7 @@ public class Flower : MonoBehaviour
         {
             flowerRB.bodyType = RigidbodyType2D.Dynamic;
             gameObject.layer = LayerMask.NameToLayer("Flower");
+            _hasHitSomething = false;
         }
     }
     

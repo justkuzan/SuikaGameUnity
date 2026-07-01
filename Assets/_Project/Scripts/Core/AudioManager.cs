@@ -6,7 +6,10 @@ public class AudioManager : MonoBehaviour
 {
 	[SerializeField] private AudioMixer mainMixer;
 	[SerializeField] private AudioSource sfxSource;
-	[SerializeField] private AudioSource[] musicSource;
+	
+	[Header("Background Channels")]
+	[SerializeField] private AudioSource musicSource;
+	[SerializeField] private AudioSource ambienceSource;
 
 	private void Awake()
 	{
@@ -21,37 +24,39 @@ public class AudioManager : MonoBehaviour
 		sfxSource.PlayOneShot(config.audioClip, config.volume);
 	}
 
-	public void playMusic(AudioConfig config)
+	public void PlayBGM(AudioConfig config)
+	{
+		PlayLoopingTrack(musicSource, config);
+	}
+	
+	public void PlayAmbience(AudioConfig config)
+	{
+		PlayLoopingTrack(ambienceSource, config);
+	}
+	
+	private void PlayLoopingTrack(AudioSource source, AudioConfig config)
 	{
 		if (config == null || config.audioClip == null) return;
-		foreach (var source in musicSource)
-		{
-			if (source.clip == config.audioClip && source.isPlaying) return;
-		}
-		foreach (var source in musicSource)
-		{
-			if (!source.isPlaying)
-			{
-				source.outputAudioMixerGroup = config.audioMixerGroup;
-				source.clip = config.audioClip;
-				source.volume = config.volume;
-				source.pitch = 1f;
-				source.loop = true;
-				source.Play();
-				return;
-			}
-		}
+		
+		source.volume = config.volume;
+		source.outputAudioMixerGroup = config.audioMixerGroup;
+		
+		if (source.clip == config.audioClip && source.isPlaying) return;
+		source.clip = config.audioClip;
+	
+		source.loop = true;
+		source.Play();
+	}
+	
+	public void SetMusicGroupActive(bool isActive)
+	{
+		float db = isActive ? 0f : -80f;
+		mainMixer.SetFloat("MusicVolume", db);
 	}
 
-	public void SetMusicActive(bool isActive)
+	public void SetSFXGroupActive(bool isActive)
 	{
-		float volume = isActive ? 0f : -80f;
-		mainMixer.SetFloat("MusicVolume", volume);
-	}
-
-	public void SetSFXActive(bool isActive)
-	{
-		float volume = isActive ? 0f : -80f;
-		mainMixer.SetFloat("SFXVolume", volume);
+		float db = isActive ? 0f : -80f;
+		mainMixer.SetFloat("SFXVolume", db);
 	}
 }
