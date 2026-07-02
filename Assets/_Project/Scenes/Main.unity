@@ -301,9 +301,9 @@ MonoBehaviour:
   OnToggleChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: SetMusicActive
+      - m_Target: {fileID: 1867778034}
+        m_TargetAssemblyTypeName: InGameUI, Assembly-CSharp
+        m_MethodName: ToggleMusic
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2834,9 +2834,9 @@ MonoBehaviour:
   OnToggleChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: SetSFXActive
+      - m_Target: {fileID: 1867778034}
+        m_TargetAssemblyTypeName: InGameUI, Assembly-CSharp
+        m_MethodName: ToggleSFX
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3087,6 +3087,7 @@ GameObject:
   - component: {fileID: 1867778030}
   - component: {fileID: 1867778029}
   - component: {fileID: 1867778033}
+  - component: {fileID: 1867778034}
   m_Layer: 5
   m_Name: InGameUI-Canvas
   m_TagString: Untagged
@@ -3205,6 +3206,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1867778034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867778028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e14d34b17293c4cbe09fe72cd3d094, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InGameUI
+  musicToggle: {fileID: 86317880}
+  sfxToggle: {fileID: 1834578497}
 --- !u!1 &1889670855
 GameObject:
   m_ObjectHideFlags: 0

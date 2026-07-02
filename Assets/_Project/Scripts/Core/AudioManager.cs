@@ -10,12 +10,24 @@ public class AudioManager : MonoBehaviour
 	[Header("Background Channels")]
 	[SerializeField] private AudioSource musicSource;
 	[SerializeField] private AudioSource ambienceSource;
+	
+	public bool IsMusicActive => PlayerPrefs.GetInt("MusicActive", 1) == 1;
+	public bool IsSFXActive => PlayerPrefs.GetInt("SFXActive", 1) == 1;
 
 	private void Awake()
 	{
 		Services.Audio = this;
 	}
-
+	
+	private void Start()
+	{
+		bool musicActive = PlayerPrefs.GetInt("MusicActive", 1) == 1;
+		bool sfxActive = PlayerPrefs.GetInt("SFXActive", 1) == 1;
+		
+		SetMusicGroupActive(musicActive);
+		SetSFXGroupActive(sfxActive);
+	}
+	
 	public void PlaySFX(AudioConfig config)
 	{
 		if (config == null || config.audioClip == null) return;
@@ -52,11 +64,17 @@ public class AudioManager : MonoBehaviour
 	{
 		float db = isActive ? 0f : -80f;
 		mainMixer.SetFloat("MusicVolume", db);
+		
+		PlayerPrefs.SetInt("MusicActive", isActive ? 1 : 0);
+		PlayerPrefs.Save();
 	}
 
 	public void SetSFXGroupActive(bool isActive)
 	{
 		float db = isActive ? 0f : -80f;
 		mainMixer.SetFloat("SFXVolume", db);
+		
+		PlayerPrefs.SetInt("SFXActive", isActive ? 1 : 0);
+		PlayerPrefs.Save();
 	}
 }

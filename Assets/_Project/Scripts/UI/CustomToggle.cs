@@ -20,7 +20,13 @@ public class CustomToggle : MonoBehaviour
     {
         UpdateVisual();
     }
-
+    
+    public void Initialize(bool state)
+    {
+        isOn = state;
+        UpdateVisual();
+    }
+    
     public void Toggle()
     {
         isOn = !isOn;
