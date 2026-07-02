@@ -11,6 +11,7 @@ namespace _Project.Scripts.Utils
         public static GameManager Game { get; set; }
         public static SpawnManager Spawner { get; set; }
         public static MergeManager Merge { get; set; }
+        public static ComboManager Combo { get; set; }
         public static DebugManager Debugger { get; set; }
     }
 }

@@ -3,6 +3,8 @@ using _Project.Scripts.Utils;
 
 public class ScoreManager : MonoBehaviour
 {
+    [SerializeField] private GameSettings settings;
+    
     private int  _currentScore;
     private int _highScore;
     
@@ -22,17 +24,18 @@ public class ScoreManager : MonoBehaviour
     
     private void OnEnable()
     {
-        GameEvents.OnFlowersCollided += HandleScore;
+        GameEvents.OnComboCalculated += HandleScoreWithCombo;
     }
 
     private void OnDisable()
     {
-        GameEvents.OnFlowersCollided -= HandleScore;
+        GameEvents.OnComboCalculated -= HandleScoreWithCombo;
     }
     
-    private void HandleScore(FlowerData flower1, FlowerData flower2, Vector3 position)
+    private void HandleScoreWithCombo(FlowerData data, int combo, Vector3 pos)
     {
-        _currentScore += flower1.scoreReward;
+        _currentScore += data.scoreReward + (combo * settings.comboMultiplier);
+    
         GameEvents.OnScoreChanged?.Invoke(_currentScore);
 
         if (_currentScore > _highScore)

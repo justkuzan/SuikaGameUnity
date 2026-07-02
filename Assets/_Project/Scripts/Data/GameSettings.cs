@@ -5,11 +5,13 @@ public class GameSettings : ScriptableObject
 {
     [Header("Spawner Behavior")]
     public float movementLimitX;
+    public float spawnCooldown;
     
     [Header("General Gameplay")]
-    public float spawnCooldown;
     public float loseTimerLimit;
     public float gameOverLineTimerLimit;
+    public float comboLeeway;
+    public int comboMultiplier;
     
     [Header("Early Game Drops")]
     public int lvl1DropQuantity;
