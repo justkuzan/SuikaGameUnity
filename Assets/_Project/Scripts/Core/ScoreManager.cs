@@ -34,8 +34,15 @@ public class ScoreManager : MonoBehaviour
     
     private void HandleScoreWithCombo(FlowerData data, int combo, Vector3 pos)
     {
-        _currentScore += data.scoreReward + (combo * settings.comboMultiplier);
-    
+        if (combo <= 2)
+        {
+            _currentScore += data.scoreReward;
+        }
+        else
+        {
+            _currentScore += data.scoreReward + (combo * settings.comboMultiplier);
+        }
+        
         GameEvents.OnScoreChanged?.Invoke(_currentScore);
 
         if (_currentScore > _highScore)

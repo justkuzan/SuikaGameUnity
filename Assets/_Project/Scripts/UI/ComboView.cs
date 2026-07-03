@@ -54,7 +54,7 @@ public class ComboView : MonoBehaviour
     // 2. Показываем финальную фразу
     private void ShowFinalComboMessage(int totalCombo)
     {
-        if (totalCombo < 2) return;
+        if (totalCombo < 3) return;
         
         int index = Mathf.Min(totalCombo, comboPhrases.Count - 1);
         comboMessageText.text = comboPhrases[index];
@@ -74,7 +74,9 @@ public class ComboView : MonoBehaviour
     private void TriggerFlash()
     {
         flashImage.DOKill();
-        flashImage.color = new Color(1, 1, 1, 1f);
-        flashImage.DOFade(0, 2f);
+        flashImage.color = new Color(1, 1, 1, 0f);
+        Sequence flashSequence = DOTween.Sequence();
+        flashSequence.Append(flashImage.DOFade(1f, 0.1f));
+        flashSequence.Append(flashImage.DOFade(0f, 1f));
     }
 }
