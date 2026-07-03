@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SFX_Combo
   m_EditorClassIdentifier: Assembly-CSharp::AudioConfig
   audioClip: {fileID: 8300000, guid: 1e068c700d6478745bd4877b1578bb74, type: 3}
-  volume: 0.25
+  volume: 0.1
   pitch: 1
   pitchRandomness: 0
   audioMixerGroup: {fileID: -8100581825783044969, guid: 15d46481f28b7fc45aea2f82f3e055ad, type: 2}

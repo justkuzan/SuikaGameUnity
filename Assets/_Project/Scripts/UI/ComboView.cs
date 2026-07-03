@@ -1,0 +1,80 @@
+using UnityEngine;
+using TMPro;
+using DG.Tweening;
+using System.Collections.Generic;
+using UnityEngine.UI;
+using _Project.Scripts.Utils;
+
+public class ComboView : MonoBehaviour
+{
+    [Header("UI Elements")]
+    [SerializeField] private TextMeshProUGUI comboCountText;
+    [SerializeField] private TextMeshProUGUI comboMessageText;
+    [SerializeField] private Image flashImage;
+
+    [Header("Phrases")]
+    [SerializeField] private List<string> comboPhrases = new List<string>();
+
+    private void OnEnable()
+    {
+        GameEvents.OnComboCalculated += ShowComboStep;
+        GameEvents.OnComboEnded += ShowFinalComboMessage;
+        
+        // Прячем всё при старте
+        comboCountText.alpha = 0;
+        comboMessageText.alpha = 0;
+        flashImage.color = new Color(1, 1, 1, 0);
+    }
+
+    private void OnDisable()
+    {
+        GameEvents.OnComboCalculated -= ShowComboStep;
+        GameEvents.OnComboEnded -= ShowFinalComboMessage;
+    }
+    
+    private void ShowComboStep(FlowerData data, int combo, Vector3 pos)
+    {
+        if (combo < 3) 
+        {
+            comboCountText.alpha = 0;
+            return;
+        }
+
+        comboCountText.text = $"x{combo}";
+        
+        comboCountText.transform.DOKill();
+        comboCountText.transform.localScale = Vector3.one;
+        comboCountText.transform.DOPunchScale(Vector3.one * 0.5f, 0.3f);
+        
+        comboCountText.DOKill();
+        comboCountText.alpha = 1;
+        comboCountText.DOFade(0, 1.5f).SetDelay(0.5f);
+    }
+
+    // 2. Показываем финальную фразу
+    private void ShowFinalComboMessage(int totalCombo)
+    {
+        if (totalCombo < 2) return;
+        
+        int index = Mathf.Min(totalCombo, comboPhrases.Count - 1);
+        comboMessageText.text = comboPhrases[index];
+        
+        comboMessageText.DOKill();
+        comboMessageText.transform.DOKill();
+        comboMessageText.alpha = 1;
+        comboMessageText.transform.localPosition = Vector3.zero;
+        
+        comboMessageText.transform.DOLocalMoveY(50f, 1f).SetRelative();
+        comboMessageText.DOFade(0, 1f).SetDelay(1f);
+        
+        // Вспышка экрана
+        TriggerFlash();
+    }
+
+    private void TriggerFlash()
+    {
+        flashImage.DOKill();
+        flashImage.color = new Color(1, 1, 1, 1f);
+        flashImage.DOFade(0, 2f);
+    }
+}

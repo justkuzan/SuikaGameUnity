@@ -23,6 +23,15 @@ public class ComboManager : MonoBehaviour
     {
         GameEvents.OnFlowersCollided -= HandleCombo;
     }
+    
+    void Update()
+    {
+        if (comboCount > 0 && Time.time > _lastComboTime + settings.comboLeeway)
+        {
+            GameEvents.OnComboEnded?.Invoke(comboCount);
+            comboCount = 0;
+        }
+    }
 
     public void HandleCombo(FlowerData currentData, FlowerData nextData, Vector3 flowerPosition)
     {
