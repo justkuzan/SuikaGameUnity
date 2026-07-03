@@ -584,6 +584,7 @@ GameObject:
   - component: {fileID: 6226958479295133770}
   - component: {fileID: -4899749750672900508}
   - component: {fileID: 7063523409366075026}
+  - component: {fileID: -2029497975091282090}
   - component: {fileID: 567871090408707255}
   - component: {fileID: 6142511878586366922}
   - component: {fileID: -2357021342257127150}
@@ -710,6 +711,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ComboManager
   settings: {fileID: 11400000, guid: d23c1c614aa22f04295acf5d5be4b2d1, type: 2}
   comboCount: 0
+--- !u!114 &-2029497975091282090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4618752586056501717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 424fc0dc40ce32b448e542bc35ce3512, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FloatingTextManager
+  textPrefab: {fileID: 962813759997824740, guid: eb6372734d94ebf48ac856239ea28ccd, type: 3}
+  settings: {fileID: 11400000, guid: d23c1c614aa22f04295acf5d5be4b2d1, type: 2}
 --- !u!114 &567871090408707255
 MonoBehaviour:
   m_ObjectHideFlags: 0

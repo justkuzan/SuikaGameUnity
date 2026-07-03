@@ -32,16 +32,19 @@ public class ScoreManager : MonoBehaviour
         GameEvents.OnComboCalculated -= HandleScoreWithCombo;
     }
     
+    public int CalculatePoints(FlowerData data, int combo)
+    {
+        if (combo < 2) 
+        {
+            return data.scoreReward;
+        }
+        return data.scoreReward + (combo * settings.comboMultiplier);
+    }
+    
     private void HandleScoreWithCombo(FlowerData data, int combo, Vector3 pos)
     {
-        if (combo <= 2)
-        {
-            _currentScore += data.scoreReward;
-        }
-        else
-        {
-            _currentScore += data.scoreReward + (combo * settings.comboMultiplier);
-        }
+        int finalPoints = CalculatePoints(data, combo);
+        _currentScore += finalPoints;
         
         GameEvents.OnScoreChanged?.Invoke(_currentScore);
 
