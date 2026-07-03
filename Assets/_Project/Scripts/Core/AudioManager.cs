@@ -6,6 +6,7 @@ public class AudioManager : MonoBehaviour
 {
 	[SerializeField] private AudioMixer mainMixer;
 	[SerializeField] private AudioSource sfxSource;
+	[SerializeField] private AudioSource comboSource;
 	
 	[Header("Background Channels")]
 	[SerializeField] private AudioSource musicSource;
@@ -28,12 +29,20 @@ public class AudioManager : MonoBehaviour
 		SetSFXGroupActive(sfxActive);
 	}
 	
-	public void PlaySFX(AudioConfig config)
+	public void PlaySFX(AudioConfig config, float pitchOverride = -1f)
 	{
 		if (config == null || config.audioClip == null) return;
 		sfxSource.outputAudioMixerGroup = config.audioMixerGroup;
-		sfxSource.pitch = config.pitch + Random.Range(-config.pitchRandomness, config.pitchRandomness);
+		float finalPitch = (pitchOverride > 0) ? pitchOverride : config.pitch + Random.Range(-config.pitchRandomness, config.pitchRandomness);
+		sfxSource.pitch = finalPitch;
 		sfxSource.PlayOneShot(config.audioClip, config.volume);
+	}
+	
+	public void PlayComboSFX(AudioConfig config, float pitch)
+	{
+		if (config == null || config.audioClip == null) return;
+		comboSource.pitch = pitch;
+		comboSource.PlayOneShot(config.audioClip, config.volume);
 	}
 
 	public void PlayBGM(AudioConfig config)
@@ -77,4 +86,4 @@ public class AudioManager : MonoBehaviour
 		PlayerPrefs.SetInt("SFXActive", isActive ? 1 : 0);
 		PlayerPrefs.Save();
 	}
-}
+} 
