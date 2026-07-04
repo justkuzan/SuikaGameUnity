@@ -3,13 +3,14 @@ using _Project.Scripts.Utils;
 
 public class SaveManager : MonoBehaviour
 {
+    private ISaveProvider _saveProvider;
     private bool _isDirty;
     private float _timer;
-    
     
     private void Awake()
     {
         Services.Save = this;
+        _saveProvider = new LocalSaveProvider();
     }
     
     void Update()
@@ -32,14 +33,19 @@ public class SaveManager : MonoBehaviour
         if (!_isDirty) return;
         if (Services.Score != null)
         {
-            PlayerPrefs.SetInt("HighScore", Services.Score.HighScore);
+            _saveProvider.SaveInt("HighScore", Services.Score.HighScore);
         }
         
-        // PlayerPrefs.SetInt("Coins", Services.Economy.Coins);
-        
-        PlayerPrefs.Save();
+        // _saveProvider.SaveInt("Coins", Services.Economy.Coins);
+
+        _saveProvider.Flush();
         _isDirty = false;
         Debug.Log("Game Saved!");
+    }
+    
+    public int LoadInt(string key, int defaultValue = 0)
+    {
+        return _saveProvider.LoadInt(key, defaultValue);
     }
     
     private void OnApplicationPause(bool pauseStatus)

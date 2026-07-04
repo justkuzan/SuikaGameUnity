@@ -18,7 +18,7 @@ public class ScoreManager : MonoBehaviour
     
     private void Start()
     {
-        _highScore = PlayerPrefs.GetInt("HighScore", 0);
+        _highScore = Services.Save.LoadInt("HighScore", 0);
         GameEvents.OnScoreChanged?.Invoke(_currentScore);
     }
     
@@ -34,7 +34,7 @@ public class ScoreManager : MonoBehaviour
     
     public int CalculatePoints(FlowerData data, int combo)
     {
-        if (combo < 2) 
+        if (combo < 3) 
         {
             return data.scoreReward;
         }

@@ -78,8 +78,8 @@ public class FloatingTextManager : MonoBehaviour
         rect.localScale = Vector3.one * 0.5f;
         seq.Join(rect.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack));
         
-        float targetY = rect.anchoredPosition.y + 100f;
-        seq.Join(rect.DOAnchorPosY(targetY, 1.2f).SetEase(Ease.OutCubic));
+        float targetY = rect.anchoredPosition.y + 120f;
+        seq.Join(rect.DOAnchorPosY(targetY, 1.5f).SetEase(Ease.OutCubic));
         seq.Join(tmp.DOFade(0, 0.8f).SetDelay(0.4f));
         
         seq.SetLink(rect.gameObject);
