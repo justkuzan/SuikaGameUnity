@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace _Project.Scripts.Utils
 {
@@ -18,6 +19,15 @@ namespace _Project.Scripts.Utils
             GameObject.DontDestroyOnLoad(instance);
 
             Debug.Log("Global systems initialized");
+        }
+        
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+        static void LoadFirstLevel()
+        {
+            if (SceneManager.GetActiveScene().buildIndex == 0)
+            {
+                SceneManager.LoadScene(1);
+            }
         }
     }
 }
