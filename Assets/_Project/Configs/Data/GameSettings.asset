@@ -16,7 +16,7 @@ MonoBehaviour:
   spawnCooldown: 0.75
   loseTimerLimit: 10
   gameOverLineTimerLimit: 3
-  comboLeeway: 5
+  comboLeeway: 2
   comboMultiplier: 1
   lvl1DropQuantity: 3
   lvl2DropQuantity: 7

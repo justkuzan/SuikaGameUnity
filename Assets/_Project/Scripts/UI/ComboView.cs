@@ -76,7 +76,7 @@ public class ComboView : MonoBehaviour
         flashImage.DOKill();
         flashImage.color = new Color(1, 1, 1, 0f);
         Sequence flashSequence = DOTween.Sequence();
-        flashSequence.Append(flashImage.DOFade(1f, 0.1f));
+        flashSequence.Append(flashImage.DOFade(0.45f, 0.1f));
         flashSequence.Append(flashImage.DOFade(0f, 1f));
     }
 }

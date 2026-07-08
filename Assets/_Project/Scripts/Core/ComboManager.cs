@@ -48,8 +48,7 @@ public class ComboManager : MonoBehaviour
         }
 
         _lastComboTime = now;
-
-        Debug.Log($"Combo: {comboCount} | Time since last: {now - _lastComboTime}");
+        
         GameEvents.OnComboCalculated?.Invoke(currentData, comboCount, flowerPosition);
     }
 }

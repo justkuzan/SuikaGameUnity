@@ -10,7 +10,13 @@ public class SaveManager : MonoBehaviour
     private void Awake()
     {
         Services.Save = this;
-        _saveProvider = new LocalSaveProvider();
+        #if UNITY_EDITOR
+                _saveProvider = new LocalSaveProvider();
+                Debug.Log("Using Local Save Provider (Editor)");
+        #else
+                _saveProvider = new YGSaveProvider();
+                Debug.Log("Using Yandex Save Provider (Build)");
+        #endif
     }
     
     void Update()

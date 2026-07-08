@@ -15,6 +15,7 @@ crashlytics-build.properties
 
 # --- Unnecessary Plugins
 Assets/Sortify/
+Assets/PluginYourGames/
 
 
 # --- IDEs (Visual Studio, VS Code, Rider) ---

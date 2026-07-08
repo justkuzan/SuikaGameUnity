@@ -692,21 +692,21 @@ PlayerSettings:
   blurSplashScreenBackground: 1
   spritePackerPolicy: 
   webGLMemorySize: 32
-  webGLExceptionSupport: 1
+  webGLExceptionSupport: 2
   webGLNameFilesAsHashes: 0
   webGLShowDiagnostics: 0
   webGLDataCaching: 1
   webGLDebugSymbols: 0
   webGLEmscriptenArgs: 
   webGLModulesDirectory: 
-  webGLTemplate: APPLICATION:Minimal
+  webGLTemplate: PROJECT:YandexGames
   webGLAnalyzeBuildSize: 0
   webGLUseEmbeddedResources: 0
-  webGLCompressionFormat: 1
+  webGLCompressionFormat: 0
   webGLWasmArithmeticExceptions: 0
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
-  webGLDecompressionFallback: 1
+  webGLDecompressionFallback: 0
   webGLInitialMemorySize: 32
   webGLMaximumMemorySize: 512
   webGLMemoryGrowthMode: 2
@@ -720,33 +720,35 @@ PlayerSettings:
   webWasm2023: 0
   webEnableSubmoduleStrippingCompatibility: 0
   scriptingDefineSymbols:
-    Android: DOTWEEN;UNITY_POST_PROCESSING_STACK_V2;SORTIFY
+    Android: DOTWEEN;UNITY_POST_PROCESSING_STACK_V2;SORTIFY;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;Localization_yg;Review_yg
     EmbeddedLinux: DOTWEEN;UNITY_POST_PROCESSING_STACK_V2;SORTIFY
     GameCoreScarlett: DOTWEEN;UNITY_POST_PROCESSING_STACK_V2;SORTIFY
     GameCoreXboxOne: DOTWEEN;UNITY_POST_PROCESSING_STACK_V2;SORTIFY
     Kepler: DOTWEEN;UNITY_POST_PROCESSING_STACK_V2;SORTIFY
-    LinuxHeadlessSimulation: DOTWEEN;UNITY_POST_PROCESSING_STACK_V2;SORTIFY
-    Nintendo Switch: DOTWEEN;UNITY_POST_PROCESSING_STACK_V2;SORTIFY
+    LinuxHeadlessSimulation: DOTWEEN;UNITY_POST_PROCESSING_STACK_V2;SORTIFY;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;Localization_yg;Review_yg
+    Nintendo Switch: DOTWEEN;UNITY_POST_PROCESSING_STACK_V2;SORTIFY;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;Localization_yg;Review_yg
     Nintendo Switch 2: DOTWEEN;UNITY_POST_PROCESSING_STACK_V2;SORTIFY
-    PS4: DOTWEEN;UNITY_POST_PROCESSING_STACK_V2;SORTIFY
-    PS5: DOTWEEN;UNITY_POST_PROCESSING_STACK_V2;SORTIFY
+    PS4: DOTWEEN;UNITY_POST_PROCESSING_STACK_V2;SORTIFY;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;Localization_yg;Review_yg
+    PS5: DOTWEEN;UNITY_POST_PROCESSING_STACK_V2;SORTIFY;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;Localization_yg;Review_yg
     QNX: DOTWEEN;UNITY_POST_PROCESSING_STACK_V2;SORTIFY
-    Standalone: DOTWEEN;UNITY_POST_PROCESSING_STACK_V2;SORTIFY
+    Standalone: DOTWEEN;UNITY_POST_PROCESSING_STACK_V2;SORTIFY;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;Localization_yg;Review_yg
     VisionOS: DOTWEEN;UNITY_POST_PROCESSING_STACK_V2;SORTIFY
-    WebGL: DOTWEEN;UNITY_POST_PROCESSING_STACK_V2;SORTIFY
-    Windows Store Apps: DOTWEEN
-    XboxOne: DOTWEEN;UNITY_POST_PROCESSING_STACK_V2;SORTIFY
-    iPhone: DOTWEEN
-    tvOS: DOTWEEN;UNITY_POST_PROCESSING_STACK_V2;SORTIFY
+    WebGL: DOTWEEN;UNITY_POST_PROCESSING_STACK_V2;SORTIFY;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;Localization_yg;Review_yg
+    Windows Store Apps: DOTWEEN;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;Localization_yg;Review_yg
+    XboxOne: DOTWEEN;UNITY_POST_PROCESSING_STACK_V2;SORTIFY;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;Localization_yg;Review_yg
+    iPhone: DOTWEEN;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;Localization_yg;Review_yg
+    tvOS: DOTWEEN;UNITY_POST_PROCESSING_STACK_V2;SORTIFY;YandexGamesPlatform_yg;PLUGIN_YG_2;TMP_YG2;InterstitialAdv_yg;RewardedAdv_yg;Authorization_yg;Storage_yg;Leaderboards_yg;Localization_yg;Review_yg
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
     Android: 1
     Standalone: 0
+    WebGL: 1
   il2cppCompilerConfiguration: {}
   il2cppCodeGeneration: {}
   il2cppStacktraceInformation: {}
-  managedStrippingLevel: {}
+  managedStrippingLevel:
+    Standalone: 4
   incrementalIl2cppBuild: {}
   suppressCommonWarnings: 1
   allowUnsafeCode: 0

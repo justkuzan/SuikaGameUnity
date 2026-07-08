@@ -1,5 +1,6 @@
 using UnityEngine;
 using _Project.Scripts.Utils;
+using YG;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -25,11 +26,13 @@ public class ScoreManager : MonoBehaviour
     private void OnEnable()
     {
         GameEvents.OnComboCalculated += HandleScoreWithCombo;
+        YG2.onGetSDKData += UpdateHighScoreFromCloud;
     }
 
     private void OnDisable()
     {
         GameEvents.OnComboCalculated -= HandleScoreWithCombo;
+        YG2.onGetSDKData -= UpdateHighScoreFromCloud;
     }
     
     public int CalculatePoints(FlowerData data, int combo)
@@ -53,5 +56,12 @@ public class ScoreManager : MonoBehaviour
             _highScore = _currentScore;
             Services.Save.SetDirty();
         }
+    }
+    
+    private void UpdateHighScoreFromCloud()
+    {
+        _highScore = Services.Save.LoadInt("HighScore", 0);
+        GameEvents.OnScoreChanged?.Invoke(_currentScore);
+        Debug.Log("High Score updated from Yandex Cloud!");
     }
 }

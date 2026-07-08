@@ -592,6 +592,7 @@ GameObject:
   - component: {fileID: 82280016090209171}
   - component: {fileID: 6515071753761351025}
   - component: {fileID: -3526657369535396727}
+  - component: {fileID: -1434919910590889621}
   m_Layer: 0
   m_Name: '[GlobalContext]'
   m_TagString: Untagged
@@ -1079,6 +1080,23 @@ MonoBehaviour:
   settings: {fileID: 11400000, guid: d23c1c614aa22f04295acf5d5be4b2d1, type: 2}
   flowerPrefab: {fileID: 1981221409224503385, guid: 0b98268469d48d94592059fbb0ba85bb, type: 3}
   debugPanel: {fileID: 1543534820208727720}
+--- !u!114 &-1434919910590889621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4618752586056501717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 341f31e995335eb49bcb5f79b009a4cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::YG.EventsYG2
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &6928175096495669086
 GameObject:
   m_ObjectHideFlags: 0
