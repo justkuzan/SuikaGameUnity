@@ -27,6 +27,10 @@ namespace _Project.Scripts.Utils
             if (SceneManager.GetActiveScene().buildIndex == 0)
             {
                 SceneManager.LoadScene(1);
+
+                #if !UNITY_EDITOR
+                    YG.YG2.GameReadyAPI(); 
+                #endif
             }
         }
     }

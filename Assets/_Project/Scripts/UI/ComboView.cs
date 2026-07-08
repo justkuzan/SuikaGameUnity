@@ -52,7 +52,7 @@ public class ComboView : MonoBehaviour
     {
         if (totalCombo < 3) return;
         
-        int index = Mathf.Min(totalCombo - 2, 9); 
+        int index = Mathf.Min(totalCombo - 2, 10); 
         string comboKey = $"combo_{index}";
         
         if (Services.Localization != null)
