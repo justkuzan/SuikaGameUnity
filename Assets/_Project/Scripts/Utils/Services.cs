@@ -12,6 +12,7 @@ namespace _Project.Scripts.Utils
         public static SpawnManager Spawner { get; set; }
         public static MergeManager Merge { get; set; }
         public static ComboManager Combo { get; set; }
+        public static LocalizationManager Localization { get; set; }
         public static DebugManager Debugger { get; set; }
     }
 }

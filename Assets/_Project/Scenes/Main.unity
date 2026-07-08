@@ -1061,6 +1061,7 @@ GameObject:
   - component: {fileID: 732566979}
   - component: {fileID: 732566981}
   - component: {fileID: 732566980}
+  - component: {fileID: 732566982}
   m_Layer: 5
   m_Name: Text (TMP) (2)
   m_TagString: Untagged
@@ -1187,6 +1188,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 732566978}
   m_CullTransparentMesh: 1
+--- !u!114 &732566982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 732566978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b59dd4ab920890142b69d2ed60e97795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  key: ui_best
 --- !u!1 &745487282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1751,6 +1765,7 @@ GameObject:
   - component: {fileID: 1188172623}
   - component: {fileID: 1188172625}
   - component: {fileID: 1188172624}
+  - component: {fileID: 1188172626}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1877,6 +1892,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1188172622}
   m_CullTransparentMesh: 1
+--- !u!114 &1188172626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188172622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b59dd4ab920890142b69d2ed60e97795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  key: ui_current_score
 --- !u!1 &1204391385
 GameObject:
   m_ObjectHideFlags: 0
@@ -2767,6 +2795,7 @@ GameObject:
   - component: {fileID: 1806241825}
   - component: {fileID: 1806241827}
   - component: {fileID: 1806241826}
+  - component: {fileID: 1806241828}
   m_Layer: 5
   m_Name: GameOver-Text (TMP)
   m_TagString: Untagged
@@ -2893,6 +2922,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1806241824}
   m_CullTransparentMesh: 1
+--- !u!114 &1806241828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1806241824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b59dd4ab920890142b69d2ed60e97795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  key: ui_gameover
 --- !u!1 &1834578492
 GameObject:
   m_ObjectHideFlags: 0
@@ -3451,18 +3493,6 @@ MonoBehaviour:
   comboCountText: {fileID: 2051786880}
   comboMessageText: {fileID: 750862819}
   flashImage: {fileID: 386665480}
-  comboPhrases:
-  - 
-  - "\u041F\u0440\u0435\u043B\u0435\u0441\u0442\u043D\u043E!"
-  - "\u0427\u0443\u0434\u0435\u0441\u043D\u043E!"
-  - "\u041E\u0447\u0430\u0440\u043E\u0432\u0430\u0442\u0435\u043B\u044C\u043D\u043E!"
-  - "\u041F\u0440\u0435\u043A\u0440\u0430\u0441\u043D\u043E!"
-  - "\u0417\u0430\u0432\u043E\u0440\u0430\u0436\u0438\u0432\u0430\u044E\u0449\u0435!"
-  - "\u0412\u043E\u043B\u0448\u0435\u0431\u043D\u043E!"
-  - "\u0412\u0435\u043B\u0438\u043A\u043E\u043B\u0435\u043F\u043D\u043E!"
-  - "\u0418\u0437\u0443\u043C\u0438\u0442\u0435\u043B\u044C\u043D\u043E!"
-  - "\u0412\u043E\u0441\u0445\u0438\u0442\u0438\u0442\u0435\u043B\u044C\u043D\u043E!"
-  - "\u0421\u0430\u043C\u043E \u0441\u043E\u0432\u0435\u0440\u0448\u0435\u043D\u0441\u0442\u0432\u043E!"
 --- !u!1 &1889670855
 GameObject:
   m_ObjectHideFlags: 0
@@ -3737,6 +3767,7 @@ GameObject:
   - component: {fileID: 2007095394}
   - component: {fileID: 2007095396}
   - component: {fileID: 2007095395}
+  - component: {fileID: 2007095397}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3863,6 +3894,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007095393}
   m_CullTransparentMesh: 1
+--- !u!114 &2007095397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007095393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b59dd4ab920890142b69d2ed60e97795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizedText
+  key: ui_start_again
 --- !u!1 &2048428705
 GameObject:
   m_ObjectHideFlags: 0

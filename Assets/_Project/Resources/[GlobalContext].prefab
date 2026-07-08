@@ -591,6 +591,7 @@ GameObject:
   - component: {fileID: -2982008762274823304}
   - component: {fileID: 82280016090209171}
   - component: {fileID: 6515071753761351025}
+  - component: {fileID: -3382818659432304839}
   - component: {fileID: -3526657369535396727}
   - component: {fileID: -1434919910590889621}
   m_Layer: 0
@@ -1065,6 +1066,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-3382818659432304839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4618752586056501717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad0203733da235d4e9588a8f44c442d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocalizationManager
+  data: {fileID: 11400000, guid: f38b54804b981644eaaf7409c30e5e51, type: 2}
 --- !u!114 &-3526657369535396727
 MonoBehaviour:
   m_ObjectHideFlags: 0

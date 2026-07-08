@@ -12,15 +12,11 @@ public class ComboView : MonoBehaviour
     [SerializeField] private TextMeshProUGUI comboMessageText;
     [SerializeField] private Image flashImage;
 
-    [Header("Phrases")]
-    [SerializeField] private List<string> comboPhrases = new List<string>();
-
     private void OnEnable()
     {
         GameEvents.OnComboCalculated += ShowComboStep;
         GameEvents.OnComboEnded += ShowFinalComboMessage;
         
-        // Прячем всё при старте
         comboCountText.alpha = 0;
         comboMessageText.alpha = 0;
         flashImage.color = new Color(1, 1, 1, 0);
@@ -56,8 +52,13 @@ public class ComboView : MonoBehaviour
     {
         if (totalCombo < 3) return;
         
-        int index = Mathf.Min(totalCombo, comboPhrases.Count - 1);
-        comboMessageText.text = comboPhrases[index];
+        int index = Mathf.Min(totalCombo - 2, 9); 
+        string comboKey = $"combo_{index}";
+        
+        if (Services.Localization != null)
+        {
+            comboMessageText.text = Services.Localization.GetTranslation(comboKey);
+        }
         
         comboMessageText.DOKill();
         comboMessageText.transform.DOKill();
