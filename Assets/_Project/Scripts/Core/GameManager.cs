@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 	
 	private float _loseTimer;
 	private int _flowersInZone;
+    private static bool _isFirstStart = true;
 
 	public enum GameState
 	{
@@ -36,6 +37,9 @@ public class GameManager : MonoBehaviour
 			case GameState.Gameover:
 				Time.timeScale = 0f;
 				GameEvents.OnGameOver?.Invoke();
+				#if !UNITY_EDITOR
+				YG.YG2.GameplayStop();
+				#endif
 				break;
 		}
 		_currentState = newState;
@@ -50,6 +54,16 @@ public class GameManager : MonoBehaviour
 	public void Start()
 	{
 		SetState(GameState.Play);
+        if (_isFirstStart)
+        {
+			#if !UNITY_EDITOR
+            YG.YG2.GameReadyAPI();
+            #endif
+            _isFirstStart = false;
+        }
+		#if !UNITY_EDITOR
+		YG.YG2.GameplayStart();
+		#endif
 	}
 
 	public void Update()
